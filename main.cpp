@@ -51,8 +51,8 @@ int main()
     cout << str << endl;
 
     //declare multiple variables
-    int i = 5, j = 10, k = 50;
-    cout << i + j + k << endl;
+    //int i = 5, j = 10, k = 50;
+    //cout << i + j + k << endl;
 
     //one value to multiple variables
     int p, q, r;
@@ -107,4 +107,62 @@ int main()
         float           4 bytes         stores fractional numbers. 7 decimal digits
         double          8 bytes         stores fractional numbers. 15 decimal digits
     */
+
+    int sizeOfInt = sizeof(int);
+    int sizeOfFloat = sizeof(float);
+    int sizeOfDouble = sizeof(double);
+    int sizeOfBoolean = sizeof(bool);
+    int sizeOfChar = sizeof(char);
+    int sizeOfStrings = sizeof(string);
+
+    cout << "size of int = " << sizeOfInt << endl;
+    cout << "size of float = " << sizeOfFloat << endl;
+    cout << "size of double = " << sizeOfDouble << endl;
+    cout << "size of boolean = " << sizeOfBoolean << endl;
+    cout << "size of char = " << sizeOfChar << endl;
+    cout << "size of string = " << sizeOfStrings << endl;
+
+
+
+    /*
+        Arrays and loops
+    */
+
+    //array of strings
+    string cars[] = {"volvo", "bmw", "ford", "mazda", "tesla"};
+    int i;
+    for(i=0; i<5; i++)
+    {
+        cout << cars[i] << endl;
+    }
+
+    //array of integers
+    int nums[] = {2,3,7,8,5};
+    int u;
+    for(u=0; u<5; u++)
+    {
+        cout << nums[u] << endl;
+    }
+
+
+    /*
+        Array Size using sizeOf()
+        Note: sizeOf() returns size in bytes;
+        To find out how many elements the array has divide the size by the size of the type.
+    */
+
+    string hillStations[5] = {"ooty", "shillong", "matheran", "kalimpong", "darjeeling"};
+    cout << sizeof(hillStations) << endl;
+    int sizeOfString = sizeof(string);
+    cout << "size of string type =" << sizeOfString << endl;
+    int arraySize = sizeof(hillStations) / sizeof(string);
+    cout << arraySize << endl;
+
+    //loop an array using sizeof()
+    int numsArr[] = {10,31,14,21,15,61};
+    int iter;
+    for(iter = 0; iter < sizeof(numsArr) / sizeof(int); iter++)
+    {
+        cout << numsArr[iter] << endl;
+    }
 }
